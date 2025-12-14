@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 body {
   font-family: var(--font-body), sans-serif;
@@ -8,82 +6,522 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 160 80% 45%;
-    --chart-3: 340 80% 60%;
-    --chart-4: 40 80% 55%;
-    --chart-5: 280 80% 60%;
+    /* IMMER DARK MODE - Kein Light Mode */
+    /* Background - Tiefschwarz mit leichtem Blau-Ton */
+    --background: 220 20% 5%;
+    --foreground: 0 0% 100%;
+    
+    /* Cards - Dunkel aber sichtbar */
+    --card: 220 18% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 18% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary - Ultra-Bright Cyber Cyan */
+    --primary: 189 100% 55%;
+    --primary-foreground: 220 20% 5%;
+    
+    /* Secondary - Dunkleres Grau */
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted - Mittlere Grautöne */
+    --muted: 220 15% 15%;
+    --muted-foreground: 0 0% 70%;
+    
+    /* Accent - Helles Cyan */
+    --accent: 189 100% 50%;
+    --accent-foreground: 220 20% 5%;
+    
+    /* Destructive */
+    --destructive: 0 90% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders - Sichtbarer */
+    --border: 220 20% 20%;
+    --input: 220 18% 15%;
+    --ring: 189 100% 55%;
+    
+    /* Charts - Neon Colors */
+    --chart-1: 189 100% 55%;
+    --chart-2: 280 100% 65%;
+    --chart-3: 330 100% 65%;
+    --chart-4: 60 100% 60%;
+    --chart-5: 120 100% 55%;
+    
+    /* Sidebar - Noch dunkler */
+    --sidebar-background: 220 25% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 189 100% 55%;
+    --sidebar-primary-foreground: 220 20% 5%;
+    --sidebar-accent: 220 18% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 189 100% 55%;
+    
+    /* Neon Colors - Ultra-Bright */
+    --neon-cyan: 189 100% 55%;
+    --neon-magenta: 330 100% 65%;
+    --neon-yellow: 60 100% 60%;
+    --neon-green: 120 100% 55%;
+    --neon-blue: 220 100% 65%;
+    --neon-purple: 280 100% 65%;
+    
     --radius: 0.5rem;
-    --sidebar-background: 240 5% 96%;
-    --sidebar-foreground: 240 5% 15%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 240 5% 90%;
-    --sidebar-accent-foreground: 240 5% 10%;
-    --sidebar-border: 240 5% 85%;
-    --sidebar-ring: 217 91% 60%;
   }
 
+  /* Dark class für Kompatibilität - aber gleiche Werte */
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --background: 220 20% 5%;
+    --foreground: 0 0% 100%;
+    --card: 220 18% 8%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 220 18% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 240 3.7% 15.9%;
+    --primary: 189 100% 55%;
+    --primary-foreground: 220 20% 5%;
+    --secondary: 220 15% 12%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 160 80% 45%;
-    --chart-3: 340 80% 60%;
-    --chart-4: 40 80% 55%;
-    --chart-5: 280 80% 60%;
-    --sidebar-background: 240 10% 5%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 189 100% 50%;
+    --accent-foreground: 220 20% 5%;
+    --destructive: 0 90% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 20%;
+    --input: 220 18% 15%;
+    --ring: 189 100% 55%;
+    --sidebar-background: 220 25% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 189 100% 55%;
+    --sidebar-primary-foreground: 220 20% 5%;
+    --sidebar-accent: 220 18% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 189 100% 55%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
+  
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ===== CYBER THEME CUSTOM STYLES ===== */
+
+@layer components {
+  /* Canvas Grid - Cyber Style - SICHTBARER */
+  .bg-cyber-grid {
+    background-color: hsl(var(--background));
+    background-image: 
+      linear-gradient(to right, hsl(var(--neon-cyan) / 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--neon-cyan) / 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+  }
+  
+  .bg-cyber-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50% 50%,
+      hsl(var(--neon-cyan) / 0.08) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+
+  /* Scan Line Effect - HELLER */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      hsl(var(--neon-cyan) / 0.6),
+      transparent
+    );
+    animation: scan-line 8s linear infinite;
+    pointer-events: none;
+    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.8);
+  }
+  
+  @keyframes scan-line {
+    0% { top: -5px; }
+    100% { top: 100%; }
+  }
+
+  /* Neon Button - SCHÄRFER */
+  .btn-neon {
+    position: relative;
+    overflow: hidden;
+    background: hsl(var(--card) / 0.95);
+    border: 2px solid hsl(var(--primary) / 0.5);
+    box-shadow: 
+      0 0 10px hsl(var(--primary) / 0.3),
+      inset 0 0 10px hsl(var(--primary) / 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-neon:hover {
+    border-color: hsl(var(--primary) / 0.8);
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.6),
+      0 0 40px hsl(var(--primary) / 0.3),
+      inset 0 0 15px hsl(var(--primary) / 0.2);
+    transform: translateY(-2px);
+    background: hsl(var(--card));
+  }
+  
+  .btn-neon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      hsl(var(--primary) / 0.2),
+      transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .btn-neon:hover::before {
+    left: 100%;
+  }
+
+  /* Cyber Card - KONTRASTREICHER */
+  .custom-card-cyber {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)),
+      hsl(var(--card) / 0.95)
+    );
+    border: 1px solid hsl(var(--border));
+    box-shadow: 
+      0 4px 6px hsl(var(--foreground) / 0.1),
+      0 0 0 1px hsl(var(--primary) / 0.1),
+      inset 0 0 20px hsl(var(--primary) / 0.02);
+    backdrop-filter: blur(12px);
+  }
+  
+  .custom-card-cyber::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.4),
+      transparent 40%,
+      transparent 60%,
+      hsl(var(--primary) / 0.2)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Node Cyber Style - ULTRA SCHARF */
+  .node-cyber {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)),
+      hsl(var(--card) / 0.95)
+    );
+    border: 2px solid hsl(var(--border));
+    box-shadow: 
+      0 4px 6px hsl(var(--foreground) / 0.1),
+      0 0 0 1px hsl(var(--primary) / 0.1);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+  
+  .node-cyber:hover {
+    box-shadow: 
+      0 10px 25px hsl(var(--foreground) / 0.15),
+      0 0 30px hsl(var(--primary) / 0.2);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+  
+  .node-cyber.node-selected {
+    border-color: hsl(var(--primary) / 0.8);
+    box-shadow: 
+      0 10px 25px hsl(var(--foreground) / 0.2),
+      0 0 30px hsl(var(--primary) / 0.5),
+      0 0 60px hsl(var(--primary) / 0.2);
+    background: hsl(var(--card));
+  }
+
+  /* Neon Text - HELLER */
+  .text-neon {
+    color: hsl(var(--primary));
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.5),
+      0 0 30px hsl(var(--primary) / 0.3);
+  }
+  
+  .text-neon-cyan {
+    color: hsl(var(--neon-cyan));
+    text-shadow: 
+      0 0 10px hsl(var(--neon-cyan) / 0.8),
+      0 0 20px hsl(var(--neon-cyan) / 0.5);
+  }
+  
+  .text-neon-magenta {
+    color: hsl(var(--neon-magenta));
+    text-shadow: 
+      0 0 10px hsl(var(--neon-magenta) / 0.8),
+      0 0 20px hsl(var(--neon-magenta) / 0.5);
+  }
+
+  /* Glowing Border - STÄRKER */
+  .border-glow {
+    border: 2px solid hsl(var(--primary) / 0.6);
+    box-shadow: 
+      0 0 10px hsl(var(--primary) / 0.4),
+      inset 0 0 10px hsl(var(--primary) / 0.2);
+  }
+
+  /* Input Cyber Style - SCHÄRFER */
+  .input-cyber {
+    background: hsl(var(--input));
+    border: 2px solid hsl(var(--border));
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+  
+  .input-cyber:focus {
+    border-color: hsl(var(--primary) / 0.6);
+    background: hsl(var(--card) / 0.8);
+    box-shadow: 
+      0 0 15px hsl(var(--primary) / 0.3),
+      inset 0 0 15px hsl(var(--primary) / 0.1);
+  }
+
+  /* Panel Cyber - SIDEBAR ULTRA SCHARF */
+  .panel-cyber {
+    position: relative;
+    background: hsl(220 25% 6% / 0.98);
+    border: 1px solid hsl(220 20% 25%);
+    box-shadow: 
+      2px 0 8px hsl(0 0% 0% / 0.3),
+      inset 0 0 20px hsl(var(--primary) / 0.03);
+    backdrop-filter: blur(16px);
+  }
+  
+  .panel-cyber::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary) / 0.08) 0%,
+      transparent 30%
+    );
+    pointer-events: none;
+  }
+
+  /* Sidebar Items - VIEL HELLER */
+  .sidebar-item {
+    position: relative;
+    background: hsl(220 18% 10%);
+    border: 1px solid hsl(220 15% 18%);
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .sidebar-item:hover {
+    background: hsl(220 18% 14%);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 
+      0 0 15px hsl(var(--primary) / 0.2),
+      inset 0 0 10px hsl(var(--primary) / 0.05);
+    transform: translateX(4px);
+  }
+  
+  .sidebar-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: hsl(var(--primary) / 0.15);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    color: hsl(var(--primary));
+  }
+  
+  .sidebar-item:hover .sidebar-item-icon {
+    background: hsl(var(--primary) / 0.25);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+  }
+  
+  .sidebar-item-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(0 0% 95%);
+    margin-bottom: 2px;
+  }
+  
+  .sidebar-item-description {
+    font-size: 12px;
+    color: hsl(0 0% 65%);
+    line-height: 1.4;
+  }
+
+  /* Category Headers */
+  .sidebar-category {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: hsl(0 0% 50%);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    padding: 0 4px;
+  }
+
+  /* Search Input - SCHÄRFER */
+  .sidebar-search {
+    background: hsl(220 18% 8%);
+    border: 2px solid hsl(220 15% 20%);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: hsl(0 0% 95%);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .sidebar-search::placeholder {
+    color: hsl(0 0% 50%);
+  }
+  
+  .sidebar-search:focus {
+    background: hsl(220 18% 10%);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 
+      0 0 0 3px hsl(var(--primary) / 0.1),
+      0 0 15px hsl(var(--primary) / 0.2);
+    outline: none;
+  }
+
+  /* Scrollbar Cyber */
+  .scrollbar-cyber::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-cyber::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-cyber::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .scrollbar-cyber::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+    background-clip: padding-box;
+  }
+
+  /* Connection Line Glow */
+  .connection-line {
+    filter: drop-shadow(0 0 2px hsl(var(--primary) / 0.5));
+    transition: all 0.3s ease;
+  }
+  
+  .connection-line:hover {
+    filter: drop-shadow(0 0 4px hsl(var(--primary) / 0.8));
+  }
+
+  /* Loading Cyber */
+  .loading-cyber {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loading-cyber::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    animation: loading-slide 1.5s infinite;
+  }
+  
+  @keyframes loading-slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Hologram Effect */
+  .hologram {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.05),
+      hsl(var(--neon-purple) / 0.05)
+    );
+  }
+  
+  .hologram::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      hsl(var(--primary) / 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      hsl(var(--primary) / 0.03) 3px
+    );
+    animation: hologram-scan 10s linear infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes hologram-scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
   }
 }
